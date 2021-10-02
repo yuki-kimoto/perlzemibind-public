@@ -7,6 +7,52 @@
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNKCYYVSFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LNKCYYVSFJ');
+</script>
+
+<!-- meta -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/images/logo.png">
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFHEQEQVJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZFHEQEQVJ6');
+</script>
+
 <title>Perlバインディング入門 - C言語/C++/Cudaの呼び出し</title>
 <meta name="description" content="Perlのバインディング入門です。バインディングとは、PerlからC言語/C++/Cudaなどで書かれたソースコードをPerlから呼び出せるようにすることをいいます。">
   </head>
@@ -57,6 +103,9 @@
 <p>
   近年では、<a href="https://deeplearning.perlzemi.com/">ディープラーニング</a>で並列計算を行うためにGPUが利用されますが、GPUを利用するためのCuda言語もバインディングも可能です。nvccというコンパイラで、コンパイルされますが、C言語/C++の記法が採用されています。
 </p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=9J-_KxTb0zE">動画紹介</a></li>
+</ul>
 <h3>XSを使ったバインディング</h3>
 <p>
   XSを使ったバインディング手法があります。Perlにおけるもっとも標準的な方法です。型変換は手動で、XSのAPIを覚えることが必要で、C言語をバインディングするPerlモジュールとして作成する必要があります。
